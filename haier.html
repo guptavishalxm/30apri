@@ -92,20 +92,24 @@
 
     <section class="contact-form-section">
       <h2>Get In Touch With Us</h2>
-      <form class="contact-form" id="contactForm">
+      <form class="contact-form" id="contactForm" action="https://formsubmit.co/info@appliqart365.com" method="POST">
+        <!-- FormSubmit hidden configuration -->
+        <input type="hidden" name="_subject" value="New Service Request from Haier Page!">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
         <div class="form-group">
           <label for="name">Your Name</label>
-          <input type="text" id="name" class="form-control" placeholder="Your Name *" required>
+          <input type="text" id="name" name="name" class="form-control" placeholder="Your Name *" required>
         </div>
         
         <div class="form-group">
           <label for="mobile">Mobile Number</label>
-          <input type="tel" id="mobile" class="form-control" placeholder="Your Mobile Number *" required pattern="[0-9]{10,12}">
+          <input type="tel" id="mobile" name="mobile" class="form-control" placeholder="Your Mobile Number *" required pattern="[0-9]{10,12}">
         </div>
 
         <div class="form-group">
           <label for="product">Select Product</label>
-          <select id="product" class="form-control" required>
+          <select id="product" name="product" class="form-control" required>
             <option value="">Washing Machine Repair</option>
             <option value="refrigerator">Refrigerator Repair</option>
             <option value="ac">AC Service & Repair</option>
@@ -116,7 +120,7 @@
 
         <div class="form-group">
           <label for="message">Message</label>
-          <textarea id="message" class="form-control" rows="4" placeholder="Message"></textarea>
+          <textarea id="message" name="message" class="form-control" rows="4" placeholder="Message"></textarea>
         </div>
 
         <button type="submit" class="btn-submit">Send</button>
@@ -169,7 +173,7 @@
       <i class="fab fa-whatsapp"></i>
     </a>
     <a href="tel:1800-569-1141" class="fab call" title="Call Us">
-      <i class="fas fa-phone-alt"></i>
+      <i class="fas fa-phone-volume"></i><span class="fab-text">1800-569-1141</span>
     </a>
   </div>
 
