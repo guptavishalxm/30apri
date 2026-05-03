@@ -26,19 +26,45 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.textContent = 'Sending...';
       submitBtn.disabled = true;
       
-      // Simulate API call
-      setTimeout(() => {
-        submitBtn.textContent = 'Message Sent Successfully!';
-        submitBtn.style.backgroundColor = 'var(--accent-color)';
-        
-        // Reset form
-        contactForm.reset();
-        
+      const formData = new FormData(contactForm);
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+      
+      console.log("Attempting to send data to Web3Forms:", object);
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: json
+      })
+      .then(async (response) => {
+        let jsonResponse = await response.json();
+        if (response.status == 200) {
+          console.log("Success response from Web3Forms:", jsonResponse);
+          submitBtn.textContent = 'Message Sent Successfully!';
+          submitBtn.style.backgroundColor = 'var(--accent-color)';
+          contactForm.reset();
+        } else {
+          console.log("Error response from Web3Forms:", response.status, jsonResponse);
+          submitBtn.textContent = 'Error: Check Console';
+          submitBtn.style.backgroundColor = 'var(--secondary-color)';
+        }
+      })
+      .catch(error => {
+        console.log("Network/Fetch error:", error);
+        submitBtn.textContent = 'Network Error';
+        submitBtn.style.backgroundColor = 'var(--secondary-color)';
+      })
+      .finally(() => {
         setTimeout(() => {
           submitBtn.textContent = originalText;
           submitBtn.disabled = false;
+          submitBtn.style.backgroundColor = ''; // Reset to default
         }, 3000);
-      }, 1500);
+      });
     });
   }
 });
