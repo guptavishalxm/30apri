@@ -139,6 +139,12 @@ brands.forEach(brand => {
   if (brand === 'Samsung') {
     // Replace the appliance group image with the specific hero poster for Samsung
     content = content.replace(/assets\/appliances_group\.png/g, 'assets/heroposter/download-32.jpeg');
+
+    // Replace the text logo with the image logo for Samsung
+    content = content.replace(
+      /<div class="hero-brand-logo">Samsung<\/div>/g, 
+      '<div class="hero-brand-logo" style="border: none; padding-bottom: 0;"><img src="assets/26f9eb843aa9808c5c05acf29812ed55.png" alt="Samsung Logo" style="max-height: 80px; width: auto;"></div>'
+    );
   }
 
   if (brand === 'Godrej') {
