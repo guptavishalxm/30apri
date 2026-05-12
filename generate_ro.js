@@ -45,6 +45,13 @@ roBrands.forEach(brand => {
     );
   }
 
+  if (brand === 'Livpure') {
+    content = content.replace(
+      /<div class="hero-brand-logo">Livpure<\/div>/g, 
+      '<div class="hero-brand-logo" style="border: none; padding-bottom: 0;"><img src="assets/livpure-logo-png_seeklogo-449577.png" alt="Livpure Logo" style="max-height: 80px; width: auto;"></div>'
+    );
+  }
+
   // Generate filename (lowercase, hyphenated, remove plus signs)
   let safeFilename = brand.toLowerCase()
     .replace(/\s+/g, '-') // replace spaces with hyphens
