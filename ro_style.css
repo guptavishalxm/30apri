@@ -268,15 +268,13 @@ header {
 
 /* Poster Section */
 .poster {
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 0;
+  width: 100%;
 }
 
 .poster-img {
   width: 100%;
-  border-radius: 20px;
-  box-shadow: var(--shadow-md);
+  display: block;
 }
 
 /* Services List */

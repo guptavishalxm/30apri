@@ -99,7 +99,16 @@ brands.forEach(brand => {
     );
   }
 
-  // Generate filename (lowercase, hyphenated)
+  if (brand === 'Hitachi') {
+    // Replace the appliance group image with the specific hero poster for Hitachi
+    content = content.replace(/assets\/appliances_group\.png/g, 'assets/heroposter/1-144.jpg');
+    
+    // Replace the text logo with the image logo for Hitachi
+    content = content.replace(
+      /<div class="hero-brand-logo">Hitachi<\/div>/g, 
+      '<div class="hero-brand-logo" style="border: none; padding-bottom: 0;"><img src="assets/pngwing.com.png" alt="Hitachi Logo" style="max-height: 80px; width: auto;"></div>'
+    );
+  }
   const filename = `${brand.toLowerCase().replace(/\s+/g, '-')}.html`;
   const outputPath = path.join(__dirname, filename);
 

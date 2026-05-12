@@ -72,9 +72,14 @@ header {
 
 /* Hero Section */
 .hero {
-  padding: 40px 20px;
+  padding: 40px 0;
   text-align: center;
   background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+}
+
+.hero h1, .hero p {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .hero h1 {
@@ -104,16 +109,14 @@ header {
 }
 
 .hero-img {
-  max-width: 100%;
-  border-radius: 12px;
-  box-shadow: var(--shadow-md);
+  width: 100%;
   margin-bottom: 30px;
   transition: var(--transition);
+  display: block;
 }
 
 .hero-img:hover {
   transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
 }
 
 /* Contact Actions */
@@ -247,13 +250,12 @@ header {
 
 /* Poster Section */
 .poster {
-  padding: 20px;
+  padding: 0;
 }
 
 .poster-img {
   width: 100%;
-  border-radius: 16px;
-  box-shadow: var(--shadow-md);
+  display: block;
 }
 
 /* Services List */
