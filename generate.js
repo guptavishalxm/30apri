@@ -9,7 +9,8 @@ const brands = [
   'Bosch',
   'Haier',
   'Samsung',
-  'Hitachi'
+  'Hitachi',
+  'Godrej'
 ];
 
 const phoneNumber = '1800-569-1141';
@@ -33,8 +34,8 @@ brands.forEach(brand => {
 
   if (brand === 'SONY TV') {
     // SONY TV specific replacements
-    content = content.replace(/assets\/appliances_group\.png/g, 'assets/tv_portfolio.png');
-    content = content.replace(/assets\/services_poster\.png/g, 'assets/sony_tv_poster.png');
+    content = content.replace(/assets\/appliances_group\.png/g, 'assets/sony/TVFY25_XR50-XR55A_HP_M.png');
+    content = content.replace(/assets\/services_poster\.png/g, 'assets/sony/Bravia_1584x1083_M_Raja Mouli Banner.jpg');
     content = content.replace(/Our Services includes Washing Machine, Refrigerator, AC, Microwave Oven\./g, 'Our Services includes exclusive TV Repair, Panel Replacement, Motherboard Repair, and Installation.');
     content = content.replace(/We provide all types of Home Appliances Repair, Services &amp; Installation/g, 'We provide all types of TV Repair, Services & Installation');
     content = content.replace(/We provide all types of Home Appliances Repair, Services & Installation/g, 'We provide all types of TV Repair, Services & Installation');
@@ -81,6 +82,12 @@ brands.forEach(brand => {
       /<div class="hero-brand-logo">SONY TV<\/div>/g, 
       '<div class="hero-brand-logo" style="border: none; padding-bottom: 0;"><img src="assets/sony_logo_PNG9.png" alt="Sony Logo" style="max-height: 80px; width: auto;"></div>'
     );
+
+    // Add extra Sony poster before form
+    content = content.replace(
+      /<section class="contact-form-section">/g,
+      '<section class="poster" style="padding-top: 0;"><img src="assets/sony/New-Customer-Care-Number_1170x727.jpg" alt="Sony Customer Care" class="poster-img"></section><section class="contact-form-section">'
+    );
   }
 
   if (brand === 'Whirlpool') {
@@ -123,6 +130,11 @@ brands.forEach(brand => {
   if (brand === 'Samsung') {
     // Replace the appliance group image with the specific hero poster for Samsung
     content = content.replace(/assets\/appliances_group\.png/g, 'assets/heroposter/download-32.jpeg');
+  }
+
+  if (brand === 'Godrej') {
+    // Replace the appliance group image with the specific hero poster for Godrej
+    content = content.replace(/assets\/appliances_group\.png/g, 'assets/heroposter/download-28.jpeg');
   }
   const filename = `${brand.toLowerCase().replace(/\s+/g, '-')}.html`;
   const outputPath = path.join(__dirname, filename);
