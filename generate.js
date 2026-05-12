@@ -91,6 +91,14 @@ brands.forEach(brand => {
     );
   }
 
+  if (brand === 'Haier') {
+    // Replace the text logo with the image logo for Haier
+    content = content.replace(
+      /<div class="hero-brand-logo">Haier<\/div>/g, 
+      '<div class="hero-brand-logo" style="border: none; padding-bottom: 0;"><img src="assets/Haier-Logo.png" alt="Haier Logo" style="max-height: 80px; width: auto;"></div>'
+    );
+  }
+
   // Generate filename (lowercase, hyphenated)
   const filename = `${brand.toLowerCase().replace(/\s+/g, '-')}.html`;
   const outputPath = path.join(__dirname, filename);
