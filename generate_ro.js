@@ -30,8 +30,20 @@ roBrands.forEach(brand => {
     .replace(/{{EMAIL_ADDRESS}}/g, emailAddress)
     .replace(/{{CITY}}/g, defaultCity);
 
-  // Custom logo logic can be added here if needed in the future
-  // For now, it uses the standard text logo with the new aqua gradient aesthetic
+  // Custom logo logic for specific brands
+  if (brand === 'LG RO') {
+    content = content.replace(
+      /<div class="hero-brand-logo">LG RO<\/div>/g, 
+      '<div class="hero-brand-logo" style="border: none; padding-bottom: 0;"><img src="assets/lg.png" alt="LG Logo" style="max-height: 80px; width: auto;"></div>'
+    );
+  }
+
+  if (brand === 'Whirlpool RO') {
+    content = content.replace(
+      /<div class="hero-brand-logo">Whirlpool RO<\/div>/g, 
+      '<div class="hero-brand-logo" style="border: none; padding-bottom: 0;"><img src="assets/Whirlpool-logo.png" alt="Whirlpool Logo" style="max-height: 80px; width: auto;"></div>'
+    );
+  }
 
   // Generate filename (lowercase, hyphenated, remove plus signs)
   let safeFilename = brand.toLowerCase()
