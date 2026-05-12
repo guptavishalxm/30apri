@@ -120,6 +120,12 @@ brands.forEach(brand => {
   if (brand === 'Bosch') {
     // Replace the appliance group image with the specific hero poster for Bosch
     content = content.replace(/assets\/appliances_group\.png/g, 'assets/heroposter/download-27.jpeg');
+
+    // Replace the text logo with the image logo for Bosch
+    content = content.replace(
+      /<div class="hero-brand-logo">Bosch<\/div>/g, 
+      '<div class="hero-brand-logo" style="border: none; padding-bottom: 0;"><img src="assets/Bosch-Logo.png" alt="Bosch Logo" style="max-height: 80px; width: auto;"></div>'
+    );
   }
 
   if (brand === 'IFB') {
