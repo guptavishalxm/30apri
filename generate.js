@@ -109,6 +109,21 @@ brands.forEach(brand => {
       '<div class="hero-brand-logo" style="border: none; padding-bottom: 0;"><img src="assets/pngwing.com.png" alt="Hitachi Logo" style="max-height: 80px; width: auto;"></div>'
     );
   }
+
+  if (brand === 'Bosch') {
+    // Replace the appliance group image with the specific hero poster for Bosch
+    content = content.replace(/assets\/appliances_group\.png/g, 'assets/heroposter/download-27.jpeg');
+  }
+
+  if (brand === 'IFB') {
+    // Replace the appliance group image with the specific hero poster for IFB
+    content = content.replace(/assets\/appliances_group\.png/g, 'assets/heroposter/download-29.jpeg');
+  }
+
+  if (brand === 'Samsung') {
+    // Replace the appliance group image with the specific hero poster for Samsung
+    content = content.replace(/assets\/appliances_group\.png/g, 'assets/heroposter/download-32.jpeg');
+  }
   const filename = `${brand.toLowerCase().replace(/\s+/g, '-')}.html`;
   const outputPath = path.join(__dirname, filename);
 
