@@ -91,6 +91,9 @@ brands.forEach(brand => {
   }
 
   if (brand === 'Whirlpool') {
+    // Replace the appliance group image with the specific hero poster for Whirlpool
+    content = content.replace(/assets\/appliances_group\.png/g, 'assets/heroposter/images-45.jpeg');
+
     // Replace the text logo with the image logo for Whirlpool
     content = content.replace(
       /<div class="hero-brand-logo">Whirlpool<\/div>/g, 
