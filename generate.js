@@ -32,6 +32,14 @@ brands.forEach(brand => {
     .replace(/{{EMAIL_ADDRESS}}/g, emailAddress)
     .replace(/{{CITY}}/g, defaultCity);
 
+  if (brand === 'LG') {
+    // Replace the text logo with the image logo for LG
+    content = content.replace(
+      /<div class="hero-brand-logo">LG<\/div>/g, 
+      '<div class="hero-brand-logo" style="border: none; padding-bottom: 0;"><img src="assets/lg.png" alt="LG Logo" style="max-height: 80px; width: auto;"></div>'
+    );
+  }
+
   if (brand === 'SONY TV') {
     // SONY TV specific replacements
     content = content.replace(/assets\/appliances_group\.png/g, 'assets/sony/TVFY25_XR50-XR55A_HP_M.png');
