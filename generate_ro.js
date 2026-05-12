@@ -55,7 +55,7 @@ roBrands.forEach(brand => {
   if (brand === 'Kent RO') {
     content = content.replace(
       /<div class="hero-brand-logo">Kent RO<\/div>/g, 
-      '<div class="hero-brand-logo" style="border: none; padding-bottom: 0;"><img src="assets/kent-seeklogo.png" alt="Kent RO Logo" style="max-height: 80px; width: auto;"></div>'
+      '<div class="hero-brand-logo" style="border: none; padding-bottom: 0;"><img src="assets/kent-logo-w-hop.svg" alt="Kent RO Logo" style="max-height: 80px; width: auto;"></div>'
     );
   }
 
