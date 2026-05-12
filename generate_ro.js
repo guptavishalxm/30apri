@@ -52,6 +52,20 @@ roBrands.forEach(brand => {
     );
   }
 
+  if (brand === 'Kent RO') {
+    content = content.replace(
+      /<div class="hero-brand-logo">Kent RO<\/div>/g, 
+      '<div class="hero-brand-logo" style="border: none; padding-bottom: 0;"><img src="assets/kent-seeklogo.png" alt="Kent RO Logo" style="max-height: 80px; width: auto;"></div>'
+    );
+  }
+
+  if (brand === 'AQUAGUARD + Eureka') {
+    content = content.replace(
+      /<div class="hero-brand-logo">AQUAGUARD \+ Eureka<\/div>/g, 
+      '<div class="hero-brand-logo" style="border: none; padding-bottom: 0;"><img src="assets/aquaguard.png" alt="Aquaguard Logo" style="max-height: 80px; width: auto;"></div>'
+    );
+  }
+
   // Generate filename (lowercase, hyphenated, remove plus signs)
   let safeFilename = brand.toLowerCase()
     .replace(/\s+/g, '-') // replace spaces with hyphens
