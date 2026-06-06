@@ -35,7 +35,7 @@ brands.forEach(brand => {
   if (brand === 'Voltas') {
     content = content.replace(
       /<div class="hero-brand-logo">Voltas<\/div>/g,
-      '<div class="hero-brand-logo" style="border: none; padding-bottom: 0;"><img src="assets/Voltas-Logo.png" alt="Voltas Logo" style="max-height: 140px; width: auto;"></div>'
+      '<div class="hero-brand-logo" style="border: none; padding-bottom: 0;"><img src="assets/Voltas-Logo.png" alt="Voltas Logo" style="max-height: 120px; max-width: 360px; width: auto;"></div>'
     );
   }
 
