@@ -10,7 +10,10 @@ const brands = [
   'Haier',
   'Samsung',
   'Hitachi',
-  'Godrej'
+  'Godrej',
+  'Daikin',
+  'Carrier',
+  'Voltas'
 ];
 
 const phoneNumber = '1800-569-1141';
