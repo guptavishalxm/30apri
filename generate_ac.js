@@ -42,7 +42,7 @@ brands.forEach(brand => {
   if (brand === 'O General') {
     content = content.replace(
       /<div class="hero-brand-logo">O General<\/div>/g,
-      '<div class="hero-brand-logo" style="border: none; padding-bottom: 0;"><img src="assets/General-AC-Logo-Vector.svg-.png" alt="O General Logo" style="max-height: 140px; width: auto;"></div>'
+      '<div class="hero-brand-logo" style="border: none; padding-bottom: 0;"><img src="assets/General-AC-Logo-Vector.svg-.png" alt="O General Logo" style="max-height: 120px; max-width: 360px; width: auto;"></div>'
     );
   }
 
