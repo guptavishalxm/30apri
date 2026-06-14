@@ -145,6 +145,12 @@ brands.forEach(brand => {
   if (brand === 'IFB') {
     // Replace the appliance group image with the specific hero poster for IFB
     content = content.replace(/assets\/appliances_group\.png/g, 'assets/heroposter/download-29.jpeg');
+
+    // Replace the text logo with the image logo for IFB
+    content = content.replace(
+      /<div class="hero-brand-logo">IFB<\/div>/g,
+      '<div class="hero-brand-logo" style="border: none; padding-bottom: 0;"><img src="assets/IFBIND.NS.png" alt="IFB Logo" style="max-height: 140px; width: auto;"></div>'
+    );
   }
 
   if (brand === 'Samsung') {

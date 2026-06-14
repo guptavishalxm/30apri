@@ -101,6 +101,19 @@ header {
   padding-bottom: 5px;
 }
 
+.hero-brand-logo img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 20px;
+}
+
+@media (max-width: 768px) {
+  .hero-brand-logo img {
+    max-height: 100px;
+  }
+}
+
 .hero p {
   color: var(--text-light);
   max-width: 800px;
